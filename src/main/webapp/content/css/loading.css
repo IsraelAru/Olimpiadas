@@ -1,0 +1,37 @@
+.app-loading {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10em;
+}
+
+.app-loading p {
+    display: block;
+    font-size: 1.17em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+}
+
+.logo-carga {
+    background: url('../images/logo.png') no repeat 50%;
+    background-size: cover;
+    width: calc(824px / 4);
+    height: 200px;
+    animation: roll 1.75s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
