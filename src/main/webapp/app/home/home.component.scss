@@ -12,13 +12,13 @@ body {
     display: grid;
     grid-auto-rows: 22rem;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    height: 80vh;
+    height: 90vh;
 }
 
 .info-covid {
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../content/images/medicos-pasillo.jpeg) no-repeat 50%;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background-size: cover;
 }
 
@@ -70,13 +70,57 @@ body {
     transform: scale(1);
 }
 
+// BTN PRUEBA
+.showmore-btn {
+    position: absolute;
+    bottom: 7%;
+    height: 3rem;
+    width: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.25s ease-in-out;
+}
+
+.showmore-btn a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 3rem;
+    text-align: center;
+    color: white;
+    background-color: #578bde;
+}
+
+.showmore-btn:hover {
+    transform: scale(1.15) translateX(-18px);
+}
+
+.showmore-btn:hover i {
+    animation: rotate 2s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 // INICIO SEGUNDA SECCION
 .covid-mundo {
     // background-color: red;
     margin-left: 1rem;
     margin-right: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
     border-radius: 1rem;
 }
 
@@ -139,7 +183,7 @@ body {
 }
 
 .texto-salud {
-    background-color: red;
+    // background-color: red;
     margin-top: 10rem;
     margin-left: 4rem;
     height: 3vw;
@@ -154,6 +198,7 @@ body {
     margin-right: 1rem;
     font-size: 1.4vw;
     // font-size: 1.2rem;
+    // background-color: blue;
 }
 
 // RESPONSIVE
@@ -168,10 +213,21 @@ body {
         font-size: 35px;
         margin-top: 20px;
     }
+    // TERCERA SECCION
+    .texto-salud {
+        margin-top: 30%;
+    }
+    .descrip-salud {
+        margin-top: 15%;
+    }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     // PRIMERA SECCION
+    .inicio1,
+    .info-covid {
+        height: 30vh;
+    }
     .texto-info {
         margin-left: 2rem;
     }
@@ -190,4 +246,90 @@ body {
         margin-left: 1rem;
     }
     // TERCERA SECCION
+    .texto-salud {
+        margin: 0;
+        height: 40vh;
+        font-size: 1.5rem;
+        margin-top: 60%;
+    }
+    .descrip-salud {
+        margin: 0;
+        font-size: 0.8rem;
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 539px) and (min-width: 480px) {
+    // PRIMERA SECCION
+    .inicio1,
+    .info-covid {
+        height: 30vh;
+    }
+    .texto-info {
+        margin-left: 2rem;
+    }
+    .btn-info {
+        height: 20px;
+        width: 100px;
+        margin-left: 2rem;
+        margin-top: 10px;
+    }
+    .txt-btn {
+        font-size: 10px;
+        margin-top: 0;
+    }
+    // SEGUNDA SECCION
+    .texto-mundo {
+        margin-left: 1rem;
+    }
+    // TERCERA SECCION
+    .texto-salud {
+        margin: 0;
+        margin-top: 60%;
+        height: 40vh;
+        font-size: 1.5rem;
+    }
+    .descrip-salud {
+        margin: 0;
+        margin-top: 20%;
+        font-size: 0.7rem;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    // PRIMERA SECCION
+    .inicio1,
+    .info-covid {
+        height: 30vh;
+    }
+    .texto-info {
+        margin-left: 2rem;
+    }
+    .btn-info {
+        height: 20px;
+        width: 100px;
+        margin-left: 2rem;
+        margin-top: 10px;
+    }
+    .txt-btn {
+        font-size: 10px;
+        margin-top: 0;
+    }
+    // SEGUNDA SECCION
+    .texto-mundo {
+        margin-left: 1rem;
+    }
+    // TERCERA SECCION
+    .texto-salud {
+        margin: 0;
+        height: 40vh;
+        font-size: 1.5rem;
+    }
+    .descrip-salud {
+        margin: 0;
+        margin-top: -17rem;
+        font-size: 0.7rem;
+        height: 40vh;
+    }
 }
