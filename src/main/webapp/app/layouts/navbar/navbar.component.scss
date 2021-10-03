@@ -18,6 +18,7 @@ Navbar
 
 .navbar {
     padding: 0.2rem 1rem;
+    background-color: white !important;
     .dropdown-item.active,
     .dropdown-item.active:focus,
     .dropdown-item.active:hover {
@@ -38,33 +39,36 @@ Navbar
     }
 }
 
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
 .icono-nav {
     display: flex;
     flex-direction: row;
 }
 
 .fa-icon {
-    font-size: 130%;
+    font-size: 100%;
     margin-right: 5px;
     transition: all 2s ease-in-out;
     text-align: center;
     position: relative;
-    bottom: 3px;
+    bottom: 0.2rem;
+    margin-top: 0.2rem;
 }
 
-.fa-icon:hover {
-    animation: roll 1.75s;
+.nav-item:hover .fa-icon {
+    animation: giro 1.5s infinite;
 }
 
-@keyframes roll {
+@keyframes giro {
     0% {
         transform: rotate(0deg);
     }
-    50% {
-        transform: rotate(180deg);
-    }
     100% {
-        transform: rotate(0deg)
+        transform: rotate(360deg);
     }
 }
 
@@ -80,4 +84,20 @@ Logo styles
     vertical-align: middle;
     background: url('../../../content/images/logo.png') no-repeat center center;
     background-size: contain;
+}
+
+.logo-img:hover {
+    animation: roll 1.2s;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }

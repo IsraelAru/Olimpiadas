@@ -14,20 +14,26 @@ export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
 
+  
   constructor(private accountService: AccountService, private router: Router) {}
-
+  
   ngOnInit(): void {
     this.authSubscription = this.accountService.getAuthenticationState().subscribe(account => (this.account = account));
   }
-
+  
   isAuthenticated(): boolean {
     return this.accountService.isAuthenticated();
   }
-
+  
   login(): void {
     this.router.navigate(['/login']);
   }
 
+  link():void {
+    const url = 'https://www.argentina.gob.ar/salud/coronavirus/poblacion';   
+    window.open(url, '_blank');
+  }
+  
   ngOnDestroy(): void {
     if (this.authSubscription) {
       this.authSubscription.unsubscribe();

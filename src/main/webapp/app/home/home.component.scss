@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body {
+    background-color: white;
+    margin-left: -15px;
+    margin-right: -15px;
+    font-family: lato regular;
+}
+
+// INICIO PRIMERA SECCION
+.inicio1 {
+    background-color: #000;
+    display: grid;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    height: 80vh;
+}
+
+.info-covid {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../content/images/medicos-pasillo.jpeg) no-repeat 50%;
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+}
+
+.texto-info {
+    // background-color: blue;
+    color: white;
+    margin-top: 15%;
+    margin-left: 4.5rem;
+    height: 3vw;
+    font-size: 3vw;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.btn-info {
+    margin-top: 50px;
+    border-radius: 5px;
+    border-bottom: 3px solid #AC003A;
+    background-color: #E91E63;
+    height: 50px;
+    width: 160px;
+    margin-left: 4.5rem;
+    display: flex;
+    justify-content: center;
+    transition: .2s;
+    user-select: none;
+}
+
+.txt-btn {
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btn-info:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 3px solid #007E65;
+    background-color: #1ABC9C;
+    transform: scale(1.1);
+}
+
+.btn-info:active {
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 3px solid #007E65 !important;
+    background-color: #007E65 !important;
+    transform: scale(1);
+}
+
+// INICIO SEGUNDA SECCION
+.covid-mundo {
+    // background-color: red;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.texto-mundo {
+    color: black;
+    margin-left: 3.5rem;
+    font-weight: 900;
+    height: 3vw;
+    font-size: 3vw;
+    justify-content: center;
+}
+
+.carousel-item {
+    overflow: hidden;
+    height: 32rem;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    transition: transform .3s ease;
+    background: #000;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+    margin-left: 8rem;
+    max-width: 500px;
+}
+
+.overlay-image {
+    // background: fixed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+// INICIO TERCERA SECCION
+.esalud {
+    background-color: #000;
+    color: white;
+    height: 50%;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../content/images/esalud.jpg) no-repeat 50%;
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    display: grid;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin-bottom: 1rem;
+}
+
+.texto-salud {
+    background-color: red;
+    margin-top: 10rem;
+    margin-left: 4rem;
+    height: 3vw;
+    // font-size: 3rem;
+    font-size: 3vw;
+    justify-content: center;
+}
+
+.descrip-salud {
+    margin-top: 4.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.4vw;
+    // font-size: 1.2rem;
+}
+
+// RESPONSIVE
+@media screen and (min-width: 2000px) {
+    // PRIMERA SECCION
+    .btn-info {
+        height: 100px;
+        width: 280px;
+        margin-top: 80px;
+    }
+    .txt-btn {
+        font-size: 35px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    // PRIMERA SECCION
+    .texto-info {
+        margin-left: 2rem;
+    }
+    .btn-info {
+        height: 20px;
+        width: 100px;
+        margin-left: 2rem;
+        margin-top: 10px;
+    }
+    .txt-btn {
+        font-size: 10px;
+        margin-top: 0;
+    }
+    // SEGUNDA SECCION
+    .texto-mundo {
+        margin-left: 1rem;
+    }
+    // TERCERA SECCION
+}

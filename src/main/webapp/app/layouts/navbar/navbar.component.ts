@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SessionStorageService } from 'ngx-webstorage';
 
-import { faBandAid } from '@fortawesome/free-solid-svg-icons';
+import { faBandAid, faUser, faUsersCog } from '@fortawesome/free-solid-svg-icons';
 
 import { VERSION } from 'app/app.constants';
 import { LANGUAGES } from 'app/config/language.constants';
@@ -24,6 +24,8 @@ export class NavbarComponent implements OnInit {
   version = '';
   
   faCoffee = faBandAid;
+  faUser = faUser;
+  faUsersCog = faUsersCog
 
   constructor(
     private loginService: LoginService,
