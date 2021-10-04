@@ -173,32 +173,28 @@ body {
     color: white;
     height: 50%;
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../content/images/esalud.jpg) no-repeat 50%;
-    width: 100%;
     height: 80vh;
     background-size: cover;
     display: grid;
-    grid-auto-rows: 22rem;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    margin-bottom: 1rem;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    // margin-bottom: 1rem;
 }
 
 .texto-salud {
-    // background-color: red;
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 4rem;
     height: 3vw;
-    // font-size: 3rem;
     font-size: 3vw;
     justify-content: center;
 }
 
 .descrip-salud {
-    margin-top: 4.5rem;
+    margin-top: 2rem;
     margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 1.4vw;
-    // font-size: 1.2rem;
-    // background-color: blue;
+    margin-right: 4rem;
+    margin-left: 4rem;
+    font-size: 1.3rem;
 }
 
 // RESPONSIVE
@@ -222,6 +218,28 @@ body {
     }
 }
 
+@media screen and (max-width: 1150px) and (min-width: 701px) {
+    // PRIMERA SECCION
+    .inicio1,
+    .info-covid {
+        height: 30vh;
+    }
+    .texto-info {
+        margin-left: 2rem;
+        margin-top: 5%;
+    }
+    .btn-info {
+        height: 20px;
+        width: 100px;
+        margin-left: 2rem;
+        margin-top: 10px;
+    }
+    .txt-btn {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+}
+
 @media screen and (max-width: 700px) {
     // PRIMERA SECCION
     .inicio1,
@@ -239,7 +257,7 @@ body {
     }
     .txt-btn {
         font-size: 10px;
-        margin-top: 0;
+        margin-top: 3px;
     }
     // SEGUNDA SECCION
     .texto-mundo {
@@ -276,7 +294,7 @@ body {
     }
     .txt-btn {
         font-size: 10px;
-        margin-top: 0;
+        margin-top: 3px;
     }
     // SEGUNDA SECCION
     .texto-mundo {
@@ -314,7 +332,7 @@ body {
     }
     .txt-btn {
         font-size: 10px;
-        margin-top: 0;
+        margin-top: 3px;
     }
     // SEGUNDA SECCION
     .texto-mundo {
