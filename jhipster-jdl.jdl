@@ -1,0 +1,66 @@
+
+entity Medico {
+	dni Integer required 
+    matricula String required
+    nombre String
+    apellido String required
+    telefono Integer 
+    atiendeDiscapacitados Boolean required
+    historiaTurnos String
+    especialidad Especialidades required
+}
+
+entity Paciente {
+	dni Integer required
+    nombre String
+    apellido String required
+    telefono Integer
+    historiaClinica String required
+    mail String
+}
+
+entity Turno {
+	estado TurnoEstado required 
+	fechaHora Instant required
+	motivo String required
+	descripcion String
+}
+
+entity Diario {
+	entrada String required
+    fecha Instant required
+}
+entity HistoriaClinica {
+	diagnostico String required
+	tratamiento String required
+    categoria Categoria required
+    fecha Instant required
+}
+
+enum TurnoEstado {
+    APROBADO, RECHAZADO , EN_ESPERA, FINALIZADO
+}
+enum Especialidades {
+	DERMATOLOGIA,
+    GINECOLOGIA,
+    EMERGENCIAS,
+    OFTALMOLOGIA,
+    OTORRINOLARGOLOGIA,
+    CLINICO,
+    BIOQUIMICA,
+    FARMACOLOGIA,
+    INMUNOLOGIA,
+    RADIOLOGIA,
+    EMERGENCIAS,
+    TRAUMATOLOGIA
+}
+enum Categoria {
+	EMERGENCIA,
+    CONSULTA,
+    HOSPITALIZACION,
+    OTRAS
+}
+
+dto all with mapstruct
+paginate all with pagination
+

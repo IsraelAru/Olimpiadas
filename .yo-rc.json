@@ -1,50 +1,56 @@
 {
-    "generator-jhipster": {
-        "blueprints": [{
-            "name": "generator-jhipster-nodejs",
-            "version": "2.0.0"
-        }],
-        "otherModules": [{
-            "name": "generator-jhipster-nodejs",
-            "version": "2.0.0"
-        }],
-        "applicationType": "monolith",
-        "baseName": "Diafragma",
-        "jhipsterVersion": "7.0.1",
-        "skipClient": false,
-        "skipServer": false,
-        "skipUserManagement": false,
-        "skipCheckLengthOfIdentifier": false,
-        "skipFakeData": false,
-        "jhiPrefix": "jhi",
-        "entitySuffix": "",
-        "dtoSuffix": "DTO",
-        "testFrameworks": [],
-        "pages": [],
-        "creationTimestamp": 1632947699603,
-        "serverPort": "8081",
-        "packageName": "com.jhipster.node",
-        "databaseType": "mongodb",
-        "devDatabaseType": "mongodb",
-        "prodDatabaseType": "mongodb",
-        "authenticationType": "jwt",
-        "clientFramework": "angularX",
-        "withAdminUi": true,
-        "clientTheme": "darkly",
-        "clientThemeVariant": "light",
-        "enableTranslation": true,
-        "nativeLanguage": "es",
-        "packageFolder": "com/jhipster/node",
-        "jwtSecretKey": "M2M0YjA5MjdmY2IzYWU5ZWU2NTRhOWEwYjViMDY5YTI2ODBiMTIwMzMxMjFjM2JlNzBjMjc5ZGVhM2Q4NzliMDgzODdjMTFlNDA0ZGVjYjc4ZmVlMzMxYzQ5MTNlMzg2YzJkYjIxNGEzNTk1NDQ1M2NkZjQ0NzBhOTcwN2M5YWE=",
-        "serviceDiscoveryType": false,
-        "websocket": false,
-        "searchEngine": false,
-        "messageBroker": false,
-        "enableHibernateCache": false,
-        "clientPackageManager": "npm",
-        "languages": ["es"],
-        "cacheProvider": "ehcache",
-        "buildTool": "maven",
-        "reactive": false
-    }
+  "generator-jhipster": {
+    "blueprints": [
+      {
+        "name": "generator-jhipster-nodejs",
+        "version": "2.0.0"
+      }
+    ],
+    "otherModules": [
+      {
+        "name": "generator-jhipster-nodejs",
+        "version": "2.0.0"
+      }
+    ],
+    "applicationType": "monolith",
+    "baseName": "Diafragma",
+    "jhipsterVersion": "7.0.1",
+    "skipClient": false,
+    "skipServer": false,
+    "skipUserManagement": false,
+    "skipCheckLengthOfIdentifier": false,
+    "skipFakeData": false,
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "testFrameworks": [],
+    "pages": [],
+    "creationTimestamp": 1632947699603,
+    "serverPort": "8081",
+    "packageName": "com.jhipster.node",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "authenticationType": "jwt",
+    "clientFramework": "angularX",
+    "withAdminUi": true,
+    "clientTheme": "darkly",
+    "clientThemeVariant": "light",
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "packageFolder": "com/jhipster/node",
+    "jwtSecretKey": "M2M0YjA5MjdmY2IzYWU5ZWU2NTRhOWEwYjViMDY5YTI2ODBiMTIwMzMxMjFjM2JlNzBjMjc5ZGVhM2Q4NzliMDgzODdjMTFlNDA0ZGVjYjc4ZmVlMzMxYzQ5MTNlMzg2YzJkYjIxNGEzNTk1NDQ1M2NkZjQ0NzBhOTcwN2M5YWE=",
+    "serviceDiscoveryType": false,
+    "websocket": false,
+    "searchEngine": false,
+    "messageBroker": false,
+    "enableHibernateCache": false,
+    "clientPackageManager": "npm",
+    "languages": ["es"],
+    "cacheProvider": "ehcache",
+    "buildTool": "maven",
+    "reactive": false,
+    "entities": ["Medico", "Paciente", "Turno", "Diario", "HistoriaClinica"],
+    "lastLiquibaseTimestamp": 1633324840000
+  }
 }

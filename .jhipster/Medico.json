@@ -1,0 +1,54 @@
+{
+  "name": "Medico",
+  "fields": [
+    {
+      "fieldName": "dni",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "matricula",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apellido",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atiendeDiscapacitados",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "historiaTurnos",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "especialidad",
+      "fieldType": "Especialidades",
+      "fieldValues": "DERMATOLOGIA,GINECOLOGIA,EMERGENCIAS,OFTALMOLOGIA,OTORRINOLARGOLOGIA,CLINICO,BIOQUIMICA,FARMACOLOGIA,INMUNOLOGIA,RADIOLOGIA,TRAUMATOLOGIA",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "medico",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211004052036"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Turno",
+  "fields": [
+    {
+      "fieldName": "estado",
+      "fieldType": "TurnoEstado",
+      "fieldValues": "APROBADO,RECHAZADO,EN_ESPERA,FINALIZADO",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fechaHora",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "motivo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "turno",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211004052038"
+}
