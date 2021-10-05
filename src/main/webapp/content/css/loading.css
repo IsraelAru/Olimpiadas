@@ -16,12 +16,12 @@
     font-weight: normal;
 }
 
-.logo-carga {
-    background: url('../images/logo.png') no repeat 50%;
+.imagen-logo {
+    background: url(../images/logo.png) no-repeat 50%;
     background-size: cover;
-    width: calc(824px / 4);
-    height: 200px;
-    animation: roll 1.75s;
+    width: calc(3471px / 7);
+    height: calc(4500px / 14);
+    animation: roll 2s infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,10 @@
     0% {
         transform: rotate(0deg);
     }
+    50% {
+        transform: rotate(180deg);
+    }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }

@@ -12,6 +12,7 @@ html {
 body {
     margin-right: -15px !important;
     margin-left: -15px !important;
+    height: 100vh;
 }
 
 .pantalla {
@@ -21,14 +22,12 @@ body {
 }
 
 .contenedor {
-    width: min(100%, 100rem);
+    /* width: min(100%, 100rem); */
+    width: 100%;
     height: 100%;
     margin: 0 auto;
-}
-
-.contenido-principal {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -41,6 +40,7 @@ body {
 
 .imgRegister {
     height: 100%;
+    width: 60vw;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../content/images/fotologin.jpg);
     background-size: cover;
     border-radius: 0 4rem 0 0;
@@ -106,11 +106,12 @@ body {
 }
 
 .login {
-    width: 30rem;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 6rem;
+    align-items: center;
 }
 
 .formulario-group {
@@ -247,10 +248,12 @@ body {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1249) {
+@media screen and (max-width: 950px) {
+    .register {
+        display: none;
+    }
     .login {
         width: 100%;
+        align-items: center;
     }
 }
-
-@media screen and (max-width: 768) {}

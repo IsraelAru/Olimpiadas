@@ -41,7 +41,11 @@ describe('Diario Controller', () => {
     });
 
     it('/GET all diarios ', async () => {
-        const getEntities: DiarioDTO[] = (await request(app.getHttpServer()).get('/api/diarios').expect(200)).body;
+        const getEntities: DiarioDTO[] = (
+            await request(app.getHttpServer())
+                .get('/api/diarios')
+                .expect(200)
+        ).body;
 
         expect(getEntities).toEqual(entityMock);
     });
@@ -58,7 +62,10 @@ describe('Diario Controller', () => {
 
     it('/POST create diarios', async () => {
         const createdEntity: DiarioDTO = (
-            await request(app.getHttpServer()).post('/api/diarios').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .post('/api/diarios')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(createdEntity).toEqual(entityMock);
@@ -66,7 +73,10 @@ describe('Diario Controller', () => {
 
     it('/PUT update diarios', async () => {
         const updatedEntity: DiarioDTO = (
-            await request(app.getHttpServer()).put('/api/diarios').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .put('/api/diarios')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(updatedEntity).toEqual(entityMock);

@@ -3,7 +3,7 @@ body {
     background-color: white;
     margin-left: -15px;
     margin-right: -15px;
-    font-family: lato regular;
+    font-family: 'Lato' regular;
 }
 
 // INICIO PRIMERA SECCION
@@ -23,7 +23,6 @@ body {
 }
 
 .texto-info {
-    // background-color: blue;
     color: white;
     margin-top: 15%;
     margin-left: 4.5rem;
@@ -50,6 +49,7 @@ body {
 .txt-btn {
     color: white;
     margin-top: 10px;
+    font-weight: 400;
     font-size: 20px;
     text-decoration: none;
 }
@@ -70,58 +70,16 @@ body {
     transform: scale(1);
 }
 
-// BTN PRUEBA
-.showmore-btn {
-    position: absolute;
-    bottom: 7%;
-    height: 3rem;
-    width: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.25s ease-in-out;
-}
-
-.showmore-btn a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1rem;
-    line-height: 3rem;
-    text-align: center;
-    color: white;
-    background-color: #578bde;
-}
-
-.showmore-btn:hover {
-    transform: scale(1.15) translateX(-18px);
-}
-
-.showmore-btn:hover i {
-    animation: rotate 2s;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
 // INICIO SEGUNDA SECCION
 .covid-mundo {
-    // background-color: red;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2rem;
     margin-bottom: 5rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .texto-mundo {
@@ -135,14 +93,15 @@ body {
 
 .carousel-item {
     overflow: hidden;
-    height: 32rem;
+    height: 80vh;
+    width: 80vw;
     border-radius: 15px;
     color: white;
     position: relative;
     background-position: center;
     background-size: cover;
     transition: transform .3s ease;
-    background: #000;
+    // background: #000;
 }
 
 .container {
@@ -164,7 +123,7 @@ body {
     top: 0;
     background-position: center;
     background-size: cover;
-    opacity: 0.5;
+    // opacity: 0.5;
 }
 
 // INICIO TERCERA SECCION
@@ -175,8 +134,9 @@ body {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../content/images/esalud.jpg) no-repeat 50%;
     height: 80vh;
     background-size: cover;
-    display: grid;
-    grid-template-rows: auto 1fr;
+    display: flex;
+    flex-direction: row;
+    // grid-template-rows: auto 1fr;
     width: 100%;
     // margin-bottom: 1rem;
 }
@@ -211,10 +171,11 @@ body {
     }
     // TERCERA SECCION
     .texto-salud {
-        margin-top: 30%;
+        margin-top: 25%;
     }
     .descrip-salud {
-        margin-top: 15%;
+        // margin-top: 25%;
+        font-size: 3rem;
     }
 }
 
@@ -340,13 +301,14 @@ body {
     }
     // TERCERA SECCION
     .texto-salud {
-        margin: 0;
-        height: 40vh;
+        background-color: red;
+        margin-top: 10vh;
+        // height: 40vh;
         font-size: 1.5rem;
     }
     .descrip-salud {
         margin: 0;
-        margin-top: -17rem;
+        margin-top: 10vh;
         font-size: 0.7rem;
         height: 40vh;
     }

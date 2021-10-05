@@ -29,7 +29,7 @@ export class MedicoService {
         const resultList = await this.medicoRepository.findAndCount(options);
         const medicoDTO: MedicoDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((medico) => medicoDTO.push(MedicoMapper.fromEntityToDTO(medico)));
+            resultList[0].forEach(medico => medicoDTO.push(MedicoMapper.fromEntityToDTO(medico)));
             resultList[0] = medicoDTO;
         }
         return resultList;

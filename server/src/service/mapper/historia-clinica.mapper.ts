@@ -9,9 +9,9 @@ export class HistoriaClinicaMapper {
         if (!entityDTO) {
             return;
         }
-        let entity = new HistoriaClinica();
+        const entity = new HistoriaClinica();
         const fields = Object.getOwnPropertyNames(entityDTO);
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entity[field] = entityDTO[field];
         });
         return entity;
@@ -21,11 +21,11 @@ export class HistoriaClinicaMapper {
         if (!entity) {
             return;
         }
-        let entityDTO = new HistoriaClinicaDTO();
+        const entityDTO = new HistoriaClinicaDTO();
 
         const fields = Object.getOwnPropertyNames(entity);
 
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entityDTO[field] = entity[field];
         });
 

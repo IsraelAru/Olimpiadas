@@ -42,7 +42,9 @@ describe('HistoriaClinica Controller', () => {
 
     it('/GET all historia-clinicas ', async () => {
         const getEntities: HistoriaClinicaDTO[] = (
-            await request(app.getHttpServer()).get('/api/historia-clinicas').expect(200)
+            await request(app.getHttpServer())
+                .get('/api/historia-clinicas')
+                .expect(200)
         ).body;
 
         expect(getEntities).toEqual(entityMock);
@@ -60,7 +62,10 @@ describe('HistoriaClinica Controller', () => {
 
     it('/POST create historia-clinicas', async () => {
         const createdEntity: HistoriaClinicaDTO = (
-            await request(app.getHttpServer()).post('/api/historia-clinicas').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .post('/api/historia-clinicas')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(createdEntity).toEqual(entityMock);
@@ -68,7 +73,10 @@ describe('HistoriaClinica Controller', () => {
 
     it('/PUT update historia-clinicas', async () => {
         const updatedEntity: HistoriaClinicaDTO = (
-            await request(app.getHttpServer()).put('/api/historia-clinicas').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .put('/api/historia-clinicas')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(updatedEntity).toEqual(entityMock);

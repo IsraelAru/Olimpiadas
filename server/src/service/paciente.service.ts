@@ -29,7 +29,7 @@ export class PacienteService {
         const resultList = await this.pacienteRepository.findAndCount(options);
         const pacienteDTO: PacienteDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((paciente) => pacienteDTO.push(PacienteMapper.fromEntityToDTO(paciente)));
+            resultList[0].forEach(paciente => pacienteDTO.push(PacienteMapper.fromEntityToDTO(paciente)));
             resultList[0] = pacienteDTO;
         }
         return resultList;

@@ -31,7 +31,7 @@ export class HistoriaClinicaService {
         const resultList = await this.historiaClinicaRepository.findAndCount(options);
         const historiaClinicaDTO: HistoriaClinicaDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((historiaClinica) =>
+            resultList[0].forEach(historiaClinica =>
                 historiaClinicaDTO.push(HistoriaClinicaMapper.fromEntityToDTO(historiaClinica)),
             );
             resultList[0] = historiaClinicaDTO;

@@ -9,9 +9,9 @@ export class DiarioMapper {
         if (!entityDTO) {
             return;
         }
-        let entity = new Diario();
+        const entity = new Diario();
         const fields = Object.getOwnPropertyNames(entityDTO);
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entity[field] = entityDTO[field];
         });
         return entity;
@@ -21,11 +21,11 @@ export class DiarioMapper {
         if (!entity) {
             return;
         }
-        let entityDTO = new DiarioDTO();
+        const entityDTO = new DiarioDTO();
 
         const fields = Object.getOwnPropertyNames(entity);
 
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entityDTO[field] = entity[field];
         });
 

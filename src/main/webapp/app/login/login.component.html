@@ -4,78 +4,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
 <body class="pantalla">
-  <div class="contenedor contenido-principal">
-    <div class="register imgRegister">
-      <div class="registerLink">
-        <h1 class="welcome">¡Bienvenido a Diafragma!</h1>
-        <span class="no-cuenta">¿No tenés una cuenta?</span><br />
-        <!-- <a class="alert-link" routerLink="/account/register" jhiTranslate=>Registrate</a> -->
-        <button type="submit" class="btn-registerOwn" routerLink="/account/register">Registrate</button>
-      </div>
-    </div>
-
-    <div class="login">
-      <div class="formLogin">
-        <form class="formulario" role="form" (ngSubmit)="login()" [formGroup]="loginForm">
-          <div class="login-img"></div>
-          <!-- <img src="./imgLogin/logo.png" class="login-img"> -->
-          <div class="formulario-group">
-            <!-- <label class="username-label" for="username" jhiTranslate="global.form.username.label">DNI</label> -->
-            <input
-              type="text"
-              class="formulario-control formBorderActivePass"
-              name="username"
-              id="username"
-              placeholder="Nº de documento"
-              formControlName="username"
-              #username
-              data-cy="username"
-            />
-            <!-- MENSAJE DE ERROR LOGIN -->
-            <div
-              class="text-danger"
-              *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched"
-              data-cy="loginError"
-            >
-              <span>Es obligatorio ingresar <strong>DNI</strong></span>
+    <div class="contenedor contenido-principal">
+        <div class="register imgRegister">
+            <div class="registerLink">
+                <h1 class="welcome">¡Bienvenido a Diafragma!</h1>
+                <span class="no-cuenta">¿No tenés una cuenta?</span><br />
+                <!-- <a class="alert-link" routerLink="/account/register" jhiTranslate=>Registrate</a> -->
+                <button type="submit" class="btn-registerOwn" routerLink="/account/register">Registrate</button>
             </div>
-          </div>
+        </div>
 
-          <div class="formulario-group">
-            <!-- <label for="password" jhiTranslate="login.form.password">Contraseña</label> -->
-            <input
-              type="password"
-              class="formulario-control formBorderActiveUser"
-              name="password"
-              id="password"
-              placeholder="Contraseña"
-              formControlName="password"
-              data-cy="password"
-            />
-            <!-- MENSAJE DE ERROR LOGIN -->
-            <div
-              class="text-danger"
-              *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched"
-              data-cy="loginError"
-            >
-              <span>Es obligatorio ingresar una <strong>contraseña</strong></span>
-            </div>
-          </div>
+        <div class="login">
+            <div class="formLogin">
+                <form class="formulario" role="form" (ngSubmit)="login()" [formGroup]="loginForm">
+                    <div class="login-img"></div>
+                    <!-- <img src="./imgLogin/logo.png" class="login-img"> -->
+                    <div class="formulario-group">
+                        <!-- <label class="username-label" for="username" jhiTranslate="global.form.username.label">DNI</label> -->
+                        <input type="text" class="formulario-control formBorderActivePass" name="username" id="username" placeholder="Nombre de Usuario" formControlName="username" #username data-cy="username" />
+                        <!-- MENSAJE DE ERROR LOGIN -->
+                        <div class="text-danger" *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched" data-cy="loginError">
+                            <span>Es obligatorio ingresar un <strong>nombre</strong></span>
+                        </div>
+                    </div>
 
-          <div class="formulario-check margin-top-1">
-            <label class="formulario-check-label" for="rememberMe">
+                    <div class="formulario-group">
+                        <!-- <label for="password" jhiTranslate="login.form.password">Contraseña</label> -->
+                        <input type="password" class="formulario-control formBorderActiveUser" name="password" id="password" placeholder="Contraseña" formControlName="password" data-cy="password" />
+                        <!-- MENSAJE DE ERROR LOGIN -->
+                        <div class="text-danger" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" data-cy="loginError">
+                            <span>Es obligatorio ingresar una <strong>contraseña</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="formulario-check margin-top-1">
+                        <label class="formulario-check-label" for="rememberMe">
               <input class="formulario-check-input" type="checkbox" name="rememberMe" id="rememberMe" formControlName="rememberMe" />
               <span class="remember-text">Recordar mi número de documento</span>
             </label>
-          </div>
+                    </div>
 
-          <button type="submit" [disabled]="loginForm.invalid" class="btn-loginOwn" jhiTranslate="login.form.button" data-cy="submit">
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn-loginOwn" jhiTranslate="login.form.button" data-cy="submit">
             Ingresá
           </button>
 
-          <div class="preguntaContra">
-            <a class="preguntaContraDeco" routerLink="/account/reset/request" data-cy="forgetYourPasswordSelector"
-              >¿Olvidaste tu contraseña?</a
+                    <div class="preguntaContra">
+                        <a class="preguntaContraDeco" routerLink="/account/reset/request" data-cy="forgetYourPasswordSelector">¿Olvidaste tu contraseña?</a
             >
           </div>
         </form>

@@ -5,10 +5,10 @@ import { Authority } from '../domain/authority.entity';
 
 export class SeedUsersRoles1570200490072 implements MigrationInterface {
     role1: Authority = { name: 'ROLE_ADMIN' };
-    
+
     role2: Authority = { name: 'ROLE_USER' };
 
-    role3: Authority = { name: 'ROLE_MEDIC'};
+    role3: Authority = { name: 'ROLE_MEDIC' };
 
     user1: User = {
         login: 'system',
@@ -74,7 +74,6 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
         lastModifiedBy: 'system',
     };
 
-
     // eslint-disable-next-line
   public async up(queryRunner: QueryRunner): Promise<any> {
         const authorityRepository = getRepository('nhi_authority');
@@ -83,13 +82,12 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
         const userRole = await authorityRepository.save(this.role2);
         const medicRole = await authorityRepository.save(this.role3);
 
-
         const userRepository = getRepository('nhi_user');
 
         this.user1.authorities = [adminRole, userRole];
         this.user3.authorities = [adminRole, userRole];
         this.user4.authorities = [userRole];
-        this.user5.authorities = [medicRole, userRole];
+        this.user5.authorities = [medicRole];
 
         await Promise.all([this.user1, this.user2, this.user3, this.user4, this.user5].map(u => transformPassword(u)));
 

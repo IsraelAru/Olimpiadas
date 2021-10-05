@@ -29,7 +29,7 @@ export class DiarioService {
         const resultList = await this.diarioRepository.findAndCount(options);
         const diarioDTO: DiarioDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((diario) => diarioDTO.push(DiarioMapper.fromEntityToDTO(diario)));
+            resultList[0].forEach(diario => diarioDTO.push(DiarioMapper.fromEntityToDTO(diario)));
             resultList[0] = diarioDTO;
         }
         return resultList;

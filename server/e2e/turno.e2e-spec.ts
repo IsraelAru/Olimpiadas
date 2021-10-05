@@ -41,7 +41,11 @@ describe('Turno Controller', () => {
     });
 
     it('/GET all turnos ', async () => {
-        const getEntities: TurnoDTO[] = (await request(app.getHttpServer()).get('/api/turnos').expect(200)).body;
+        const getEntities: TurnoDTO[] = (
+            await request(app.getHttpServer())
+                .get('/api/turnos')
+                .expect(200)
+        ).body;
 
         expect(getEntities).toEqual(entityMock);
     });
@@ -58,7 +62,10 @@ describe('Turno Controller', () => {
 
     it('/POST create turnos', async () => {
         const createdEntity: TurnoDTO = (
-            await request(app.getHttpServer()).post('/api/turnos').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .post('/api/turnos')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(createdEntity).toEqual(entityMock);
@@ -66,7 +73,10 @@ describe('Turno Controller', () => {
 
     it('/PUT update turnos', async () => {
         const updatedEntity: TurnoDTO = (
-            await request(app.getHttpServer()).put('/api/turnos').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .put('/api/turnos')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(updatedEntity).toEqual(entityMock);

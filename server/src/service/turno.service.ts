@@ -29,7 +29,7 @@ export class TurnoService {
         const resultList = await this.turnoRepository.findAndCount(options);
         const turnoDTO: TurnoDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((turno) => turnoDTO.push(TurnoMapper.fromEntityToDTO(turno)));
+            resultList[0].forEach(turno => turnoDTO.push(TurnoMapper.fromEntityToDTO(turno)));
             resultList[0] = turnoDTO;
         }
         return resultList;

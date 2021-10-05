@@ -41,7 +41,11 @@ describe('Medico Controller', () => {
     });
 
     it('/GET all medicos ', async () => {
-        const getEntities: MedicoDTO[] = (await request(app.getHttpServer()).get('/api/medicos').expect(200)).body;
+        const getEntities: MedicoDTO[] = (
+            await request(app.getHttpServer())
+                .get('/api/medicos')
+                .expect(200)
+        ).body;
 
         expect(getEntities).toEqual(entityMock);
     });
@@ -58,7 +62,10 @@ describe('Medico Controller', () => {
 
     it('/POST create medicos', async () => {
         const createdEntity: MedicoDTO = (
-            await request(app.getHttpServer()).post('/api/medicos').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .post('/api/medicos')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(createdEntity).toEqual(entityMock);
@@ -66,7 +73,10 @@ describe('Medico Controller', () => {
 
     it('/PUT update medicos', async () => {
         const updatedEntity: MedicoDTO = (
-            await request(app.getHttpServer()).put('/api/medicos').send(entityMock).expect(201)
+            await request(app.getHttpServer())
+                .put('/api/medicos')
+                .send(entityMock)
+                .expect(201)
         ).body;
 
         expect(updatedEntity).toEqual(entityMock);

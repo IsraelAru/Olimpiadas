@@ -9,9 +9,9 @@ export class PacienteMapper {
         if (!entityDTO) {
             return;
         }
-        let entity = new Paciente();
+        const entity = new Paciente();
         const fields = Object.getOwnPropertyNames(entityDTO);
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entity[field] = entityDTO[field];
         });
         return entity;
@@ -21,11 +21,11 @@ export class PacienteMapper {
         if (!entity) {
             return;
         }
-        let entityDTO = new PacienteDTO();
+        const entityDTO = new PacienteDTO();
 
         const fields = Object.getOwnPropertyNames(entity);
 
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entityDTO[field] = entity[field];
         });
 
