@@ -1,0 +1,28 @@
+body {
+    background-color: rebeccapurple;
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenedor {
+    /* width: min(100%, 100rem); */
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    width: 100vw;
+}
+
+.register {
+    height: 100vh;
+}

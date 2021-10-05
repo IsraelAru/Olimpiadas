@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="medico">
+      <h2 data-cy="medicoDetailsHeading"><span jhiTranslate="diafragmaApp.medico.detail.title">Medico</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ medico.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.dni">Dni</span></dt>
+        <dd>
+          <span>{{ medico.dni }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.matricula">Matricula</span></dt>
+        <dd>
+          <span>{{ medico.matricula }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ medico.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.apellido">Apellido</span></dt>
+        <dd>
+          <span>{{ medico.apellido }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.telefono">Telefono</span></dt>
+        <dd>
+          <span>{{ medico.telefono }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.atiendeDiscapacitados">Atiende Discapacitados</span></dt>
+        <dd>
+          <span>{{ medico.atiendeDiscapacitados }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.historiaTurnos">Historia Turnos</span></dt>
+        <dd>
+          <span>{{ medico.historiaTurnos }}</span>
+        </dd>
+        <dt><span jhiTranslate="diafragmaApp.medico.especialidad">Especialidad</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'diafragmaApp.Especialidades.' + medico.especialidad }}">{{ medico.especialidad }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/medico', medico.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

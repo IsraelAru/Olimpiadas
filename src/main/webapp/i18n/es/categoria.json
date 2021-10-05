@@ -1,0 +1,11 @@
+{
+  "diafragmaApp": {
+    "Categoria": {
+      "null": "",
+      "EMERGENCIA": "EMERGENCIA",
+      "CONSULTA": "CONSULTA",
+      "HOSPITALIZACION": "HOSPITALIZACION",
+      "OTRAS": "OTRAS"
+    }
+  }
+}

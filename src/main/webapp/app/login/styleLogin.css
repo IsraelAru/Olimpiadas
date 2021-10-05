@@ -1,0 +1,259 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+    height: 100vh;
+}
+
+.pantalla {
+    background-color: #fff;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+    /* width: min(100%, 100rem); */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* REGISTRO */
+
+.register {
+    display: flex;
+    align-items: center;
+}
+
+.imgRegister {
+    height: 100%;
+    width: 60vw;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../content/images/fotologin.jpg);
+    background-size: cover;
+    border-radius: 0 4rem 0 0;
+    position: relative;
+    background-position: center center;
+}
+
+.welcome {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.no-cuenta {
+    font-size: 1.5rem;
+}
+
+.registerLink {
+    position: absolute;
+    margin-left: 5rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+/* BOTÓN REGISTER */
+
+.btn-registerOwn {
+    user-select: none;
+    margin-top: 1rem;
+    padding: .6rem 1.2rem;
+    /* background-color: #1ABC9C; */
+    background-color: #E91E63;
+    font-size: 1rem;
+    border-radius: 2rem;
+    width: 10rem;
+    border: 1px solid transparent;
+    text-transform: initial;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.btn-registerOwn:hover {
+    /* background-color: #E91E63; */
+    background-color: #1ABC9C;
+}
+
+.btn-registerOwn:focus {
+    box-shadow: 0 0 0 0.3rem rgb(0 126 101 / 50%);
+    background-color: #007E65
+}
+
+.btn-registerOwn:active,
+.btn-registerOwn:visited {
+    border-color: #007E65;
+    background-color: #007E65;
+}
+
+.formLogin {
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+    align-items: center;
+}
+
+.formulario-group {
+    /* margin-top: 2rem;
+    padding: .6rem 0 .7rem;
+     */
+    width: 100%;
+}
+
+.formBorderActiveUser:focus {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.42);
+    outline: 0;
+    margin-bottom: -1px;
+}
+
+.formBorderActivePass:focus {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.42);
+    outline: 0;
+    margin-bottom: -1px;
+}
+
+.formulario-control {
+    outline: 0;
+    box-sizing: border-box;
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    padding: .6rem 0 .7rem;
+    margin-top: 2rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-danger {
+    text-align: start;
+    margin-left: 2%;
+}
+
+.login-img {
+    background-image: url(../../content/images/logo.png);
+    background-size: cover;
+    align-items: center;
+    height: 10rem;
+    width: 9rem;
+}
+
+.margin-top-1 {
+    margin-top: 1rem;
+}
+
+
+/* BOTÓN LOGIN */
+
+.btn-loginOwn {
+    user-select: none;
+    margin-top: 2rem;
+    padding: .6rem 1.2rem;
+    /* background-color: #1ABC9C; */
+    background-color: #E91E63;
+    font-size: 1rem;
+    border-radius: 2rem;
+    width: 10rem;
+    border: 1px solid transparent;
+    text-transform: initial;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.btn-loginOwn:hover {
+    /* background-color: #E91E63; */
+    background-color: #1ABC9C;
+}
+
+.btn-loginOwn:disabled {
+    background-color: #007E65;
+    cursor: not-allowed;
+}
+
+.btn-loginOwn:active,
+.btn-loginOwn:visited {
+    border-color: #007E65;
+    background-color: #007E65;
+}
+
+.btn-loginOwn:focus {
+    box-shadow: 0 0 0 0.3rem rgb(0 126 101 / 50%);
+    background-color: #007E65
+}
+
+.formulario-check {
+    user-select: none;
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+.formulario-check-input {
+    margin-right: 0.9rem;
+    margin-left: 0;
+    width: 1rem;
+    height: 1rem;
+}
+
+.remember-text {
+    color: #000;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario-check-label {
+    display: flex;
+    align-items: center;
+}
+
+.preguntaContra {
+    margin-top: 1rem;
+}
+
+.preguntaContraDeco {
+    color: #E91E63;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.preguntaContraDeco:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 950px) {
+    .register {
+        display: none;
+    }
+    .login {
+        width: 100%;
+        align-items: center;
+    }
+}

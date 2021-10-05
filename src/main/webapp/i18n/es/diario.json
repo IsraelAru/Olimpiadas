@@ -1,0 +1,25 @@
+{
+  "diafragmaApp": {
+    "diario": {
+      "home": {
+        "title": "Diarios",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Diario",
+        "createOrEditLabel": "Crear o editar Diario",
+        "notFound": "Ningún Diarios encontrado"
+      },
+      "created": "Un nuevo Diario ha sido creado con el identificador {{ param }}",
+      "updated": "Un Diario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Diario ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Diario {{ id }}?"
+      },
+      "detail": {
+        "title": "Diario"
+      },
+      "id": "ID",
+      "entrada": "Entrada",
+      "fecha": "Fecha"
+    }
+  }
+}
