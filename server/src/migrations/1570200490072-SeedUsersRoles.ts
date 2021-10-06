@@ -85,7 +85,7 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
         const userRepository = getRepository('nhi_user');
 
         this.user1.authorities = [adminRole, userRole];
-        this.user3.authorities = [adminRole, userRole];
+        this.user3.authorities = [adminRole];
         this.user4.authorities = [userRole];
         this.user5.authorities = [medicRole];
 

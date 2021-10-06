@@ -24,6 +24,43 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           canActivate: [UserRouteAccessService],
           loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule),
         },
+
+        {
+          path: 'turno',
+          data: {
+            authorities: [Authority.MEDIC],
+          },
+          canActivate: [UserRouteAccessService],
+          loadChildren: () => import('./entities/turno/turno.module').then(m => m.TurnoModule),
+        },
+
+
+
+        
+        {
+          path: 'historia-clinica',
+          data: {
+            authorities: [Authority.MEDIC],
+          },
+          canActivate: [UserRouteAccessService],
+          loadChildren: () => import('./entities/historia-clinica/historia-clinica.module').then(m => m.HistoriaClinicaModule),
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {
           path: 'account',
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
