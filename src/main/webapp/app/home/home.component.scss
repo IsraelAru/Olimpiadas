@@ -8,7 +8,6 @@ body {
 
 // INICIO PRIMERA SECCION
 .inicio1 {
-    background-color: #000;
     display: grid;
     grid-auto-rows: 22rem;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -27,7 +26,7 @@ body {
     margin-top: 15%;
     margin-left: 4.5rem;
     height: 3vw;
-    font-size: 3vw;
+    font-size: 2rem;
     justify-content: center;
     font-weight: 900;
 }
@@ -71,6 +70,83 @@ body {
 }
 
 // INICIO SEGUNDA SECCION
+.texto-num {
+    color: black;
+    margin-top: 2%;
+    height: 3vw;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.all-cards {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.card-container .card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.card-container .card .content {
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card-container .card .content h2 {
+    position: absolute;
+    top: -20px;
+    right: 2%;
+    font-size: 8em;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+.card-container .card .content h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #000;
+    z-index: 1;
+}
+
+.card-container .card .content p {
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+}
+
+// INICIO TERCERA SECCION
 .covid-mundo {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -126,26 +202,26 @@ body {
     // opacity: 0.5;
 }
 
-// INICIO TERCERA SECCION
+// INICIO CUARTA SECCION
 .esalud {
     background-color: #000;
     color: white;
-    height: 50%;
+    height: 100vh;
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../content/images/esalud.jpg) no-repeat 50%;
-    height: 80vh;
+    max-height: fit-content;
     background-size: cover;
     display: flex;
-    flex-direction: row;
-    // grid-template-rows: auto 1fr;
+    flex-direction: column;
     width: 100%;
-    // margin-bottom: 1rem;
 }
 
 .texto-salud {
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-left: 4rem;
+    margin-bottom: 1rem;
     height: 3vw;
-    font-size: 3vw;
+    font-size: 2rem;
+    font-weight: 800;
     justify-content: center;
 }
 
@@ -169,17 +245,10 @@ body {
         font-size: 35px;
         margin-top: 20px;
     }
-    // TERCERA SECCION
-    .texto-salud {
-        margin-top: 25%;
-    }
-    .descrip-salud {
-        // margin-top: 25%;
-        font-size: 3rem;
-    }
+    // CUARTA SECCION
 }
 
-@media screen and (max-width: 1150px) and (min-width: 701px) {
+@media screen and (min-width: 701px) and (max-width: 1150px) {
     // PRIMERA SECCION
     .inicio1,
     .info-covid {
@@ -187,16 +256,16 @@ body {
     }
     .texto-info {
         margin-left: 2rem;
-        margin-top: 5%;
+        margin-top: 1%;
     }
     .btn-info {
-        height: 20px;
+        height: 40px;
         width: 100px;
         margin-left: 2rem;
-        margin-top: 10px;
+        margin-top: 7%;
     }
     .txt-btn {
-        font-size: 10px;
+        font-size: 1rem;
         margin-top: 3px;
     }
 }
@@ -208,37 +277,34 @@ body {
         height: 30vh;
     }
     .texto-info {
+        margin-top: 0;
         margin-left: 2rem;
     }
     .btn-info {
-        height: 20px;
+        height: 40px;
         width: 100px;
         margin-left: 2rem;
-        margin-top: 10px;
+        margin-top: 10%;
     }
     .txt-btn {
-        font-size: 10px;
+        font-size: 1rem;
         margin-top: 3px;
     }
     // SEGUNDA SECCION
     .texto-mundo {
         margin-left: 1rem;
     }
-    // TERCERA SECCION
+    // CUARTA SECCION
     .texto-salud {
-        margin: 0;
-        height: 40vh;
+        margin-bottom: 1rem;
         font-size: 1.5rem;
-        margin-top: 60%;
     }
     .descrip-salud {
-        margin: 0;
-        font-size: 0.8rem;
-        margin-top: 20%;
+        font-size: 1.3rem;
     }
 }
 
-@media screen and (max-width: 539px) and (min-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 644px) {
     // PRIMERA SECCION
     .inicio1,
     .info-covid {
@@ -248,31 +314,26 @@ body {
         margin-left: 2rem;
     }
     .btn-info {
-        height: 20px;
+        height: 40px;
         width: 100px;
         margin-left: 2rem;
-        margin-top: 10px;
+        margin-top: 15%;
     }
     .txt-btn {
-        font-size: 10px;
+        font-size: 1rem;
         margin-top: 3px;
     }
     // SEGUNDA SECCION
-    .texto-mundo {
-        margin-left: 1rem;
+    .texto-num {
+        font-size: 1rem;
     }
-    // TERCERA SECCION
+    // CUARTA SECCION
     .texto-salud {
-        margin: 0;
-        margin-top: 60%;
-        height: 40vh;
-        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
     }
     .descrip-salud {
-        margin: 0;
-        margin-top: 20%;
-        font-size: 0.7rem;
-        height: 40vh;
+        font-size: 1rem;
     }
 }
 
@@ -284,32 +345,29 @@ body {
     }
     .texto-info {
         margin-left: 2rem;
+        font-size: 1.5rem;
     }
     .btn-info {
-        height: 20px;
+        height: 40px;
         width: 100px;
         margin-left: 2rem;
-        margin-top: 10px;
+        margin-top: 30%;
     }
     .txt-btn {
-        font-size: 10px;
+        font-size: 1rem;
         margin-top: 3px;
     }
     // SEGUNDA SECCION
-    .texto-mundo {
-        margin-left: 1rem;
+    .texto-num {
+        font-size: 1rem;
     }
-    // TERCERA SECCION
+    // CUARTA SECCION
     .texto-salud {
-        background-color: red;
-        margin-top: 10vh;
-        // height: 40vh;
-        font-size: 1.5rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        font-size: 1.1rem;
     }
     .descrip-salud {
-        margin: 0;
-        margin-top: 10vh;
-        font-size: 0.7rem;
-        height: 40vh;
+        font-size: 0.9rem;
     }
 }
