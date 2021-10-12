@@ -21,7 +21,7 @@ import { HeaderUtil } from '../../client/header-util';
 import { Request } from '../../client/request';
 import { LoggingInterceptor } from '../../client/interceptors/logging.interceptor';
 
-@Controller('api/turnos')
+@Controller('/api/turnos')
 @UseGuards(AuthGuard, RolesGuard)
 @UseInterceptors(LoggingInterceptor, ClassSerializerInterceptor)
 @ApiBearerAuth()
@@ -32,7 +32,7 @@ export class TurnoController {
     constructor(private readonly turnoService: TurnoService) {}
 
     @Get('/')
-    @Roles(RoleType.USER)
+    @Roles(RoleType.MEDIC)
     @ApiResponse({
         status: 200,
         description: 'List all records',
@@ -50,7 +50,7 @@ export class TurnoController {
     }
 
     @Get('/:id')
-    @Roles(RoleType.USER)
+    @Roles(RoleType.MEDIC)
     @ApiResponse({
         status: 200,
         description: 'The found record',
@@ -61,7 +61,7 @@ export class TurnoController {
     }
 
     @PostMethod('/')
-    @Roles(RoleType.ADMIN)
+    @Roles(RoleType.MEDIC)
     @ApiOperation({ title: 'Create turno' })
     @ApiResponse({
         status: 201,
@@ -76,7 +76,7 @@ export class TurnoController {
     }
 
     @Put('/')
-    @Roles(RoleType.ADMIN)
+    @Roles(RoleType.MEDIC)
     @ApiOperation({ title: 'Update turno' })
     @ApiResponse({
         status: 200,
@@ -89,7 +89,7 @@ export class TurnoController {
     }
 
     @Put('/:id')
-    @Roles(RoleType.ADMIN)
+    @Roles(RoleType.MEDIC)
     @ApiOperation({ title: 'Update turno with id' })
     @ApiResponse({
         status: 200,
@@ -102,7 +102,7 @@ export class TurnoController {
     }
 
     @Delete('/:id')
-    @Roles(RoleType.ADMIN)
+    @Roles(RoleType.MEDIC)
     @ApiOperation({ title: 'Delete turno' })
     @ApiResponse({
         status: 204,

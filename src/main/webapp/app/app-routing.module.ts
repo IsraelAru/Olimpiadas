@@ -27,9 +27,9 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
         {
           path: 'turno',
-          data: {
-            authorities: [Authority.MEDIC],
-          },
+          // data: {
+          //   authorities: [Authority.MEDIC],
+          // },
           canActivate: [UserRouteAccessService],
           loadChildren: () => import('./entities/turno/turno.module').then(m => m.TurnoModule),
         },

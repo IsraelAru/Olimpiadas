@@ -70,6 +70,61 @@ body {
 }
 
 // INICIO SEGUNDA SECCION
+.covid-mundo {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto-mundo {
+    color: black;
+    margin-left: 3.5rem;
+    font-weight: 900;
+    height: 3vw;
+    font-size: 3vw;
+    justify-content: center;
+}
+
+.carousel-item {
+    overflow: hidden;
+    height: 80vh;
+    width: 80vw;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    transition: transform .3s ease;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+    margin-left: 8rem;
+    // max-width: 500px;
+}
+
+.overlay-image {
+    // background: fixed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    // opacity: 0.5;
+}
+
+// INICIO TERCERA SECCION
 .texto-num {
     color: black;
     margin-top: 2%;
@@ -147,67 +202,14 @@ body {
     font-weight: 500;
 }
 
-// INICIO TERCERA SECCION
-.covid-mundo {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.texto-mundo {
-    color: black;
-    margin-left: 3.5rem;
-    font-weight: 900;
-    height: 3vw;
-    font-size: 3vw;
-    justify-content: center;
-}
-
-.carousel-item {
-    overflow: hidden;
-    height: 80vh;
-    width: 80vw;
-    border-radius: 15px;
-    color: white;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    transition: transform .3s ease;
-    // background: #000;
-}
-
-.container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 50px;
-    margin-left: 8rem;
-    max-width: 500px;
-}
-
-.overlay-image {
-    // background: fixed;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-position: center;
-    background-size: cover;
-    // opacity: 0.5;
-}
-
 // INICIO CUARTA SECCION
 .esalud {
     background-color: #000;
     color: white;
-    height: 100vh;
+    // height: 100vh;
+    min-height: 400px;
+    margin: 0 auto;
+    margin-top: 5%;
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../content/images/esalud.jpg) no-repeat 50%;
     max-height: fit-content;
     background-size: cover;
@@ -216,21 +218,16 @@ body {
     width: 100%;
 }
 
-.texto-salud {
+.titulo-salud {
     margin-top: 2rem;
     margin-left: 4rem;
-    margin-bottom: 1rem;
-    height: 3vw;
-    font-size: 2rem;
-    font-weight: 800;
-    justify-content: center;
 }
 
 .descrip-salud {
     margin-top: 2rem;
-    margin-left: 1rem;
     margin-right: 4rem;
     margin-left: 4rem;
+    margin-bottom: 2rem;
     font-size: 1.3rem;
 }
 
@@ -296,10 +293,6 @@ body {
         margin-left: 1rem;
     }
     // CUARTA SECCION
-    .texto-salud {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
     .descrip-salud {
         font-size: 1.3rem;
     }
@@ -329,10 +322,6 @@ body {
         font-size: 1rem;
     }
     // CUARTA SECCION
-    .texto-salud {
-        margin-bottom: 0.5rem;
-        font-size: 1.4rem;
-    }
     .descrip-salud {
         font-size: 1rem;
     }
@@ -363,11 +352,6 @@ body {
         font-size: 1rem;
     }
     // CUARTA SECCION
-    .texto-salud {
-        margin-top: 0.1rem;
-        margin-bottom: 0.1rem;
-        font-size: 1.1rem;
-    }
     .descrip-salud {
         font-size: 0.9rem;
     }
