@@ -1,46 +1,46 @@
-<div class="row justify-content-center">
-  <div class="col-8">
-    <div *ngIf="historiaClinica">
-      <h2 data-cy="historiaClinicaDetailsHeading">
-        <span jhiTranslate="diafragmaApp.historiaClinica.detail.title">Historia Clinica</span>
-      </h2>
+<div class="row justify-content-center" style="height: 100vh; display: flex; align-content: center; justify-content: center; padding-top: 10vh">
+    <div class="col-8">
+        <div *ngIf="historiaClinica">
+            <h2 data-cy="historiaClinicaDetailsHeading">
+                <span jhiTranslate="diafragmaApp.historiaClinica.detail.title">Historia Clinica</span>
+            </h2>
 
-      <hr />
+            <hr />
 
-      <jhi-alert-error></jhi-alert-error>
+            <jhi-alert-error></jhi-alert-error>
 
-      <jhi-alert></jhi-alert>
+            <jhi-alert></jhi-alert>
 
-      <dl class="row-md jh-entity-details">
-        <dt><span jhiTranslate="global.field.id">ID</span></dt>
-        <dd>
-          <span>{{ historiaClinica.id }}</span>
-        </dd>
-        <dt><span jhiTranslate="diafragmaApp.historiaClinica.diagnostico">Diagnostico</span></dt>
-        <dd>
-          <span>{{ historiaClinica.diagnostico }}</span>
-        </dd>
-        <dt><span jhiTranslate="diafragmaApp.historiaClinica.tratamiento">Tratamiento</span></dt>
-        <dd>
-          <span>{{ historiaClinica.tratamiento }}</span>
-        </dd>
-        <dt><span jhiTranslate="diafragmaApp.historiaClinica.categoria">Categoria</span></dt>
-        <dd>
-          <span jhiTranslate="{{ 'diafragmaApp.Categoria.' + historiaClinica.categoria }}">{{ historiaClinica.categoria }}</span>
-        </dd>
-        <dt><span jhiTranslate="diafragmaApp.historiaClinica.fecha">Fecha</span></dt>
-        <dd>
-          <span>{{ historiaClinica.fecha | formatMediumDatetime }}</span>
-        </dd>
-      </dl>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="global.field.id">ID</span></dt>
+                <dd>
+                    <span>{{ historiaClinica.id }}</span>
+                </dd>
+                <dt><span jhiTranslate="diafragmaApp.historiaClinica.diagnostico">Diagnostico</span></dt>
+                <dd>
+                    <span>{{ historiaClinica.diagnostico }}</span>
+                </dd>
+                <dt><span jhiTranslate="diafragmaApp.historiaClinica.tratamiento">Tratamiento</span></dt>
+                <dd>
+                    <span>{{ historiaClinica.tratamiento }}</span>
+                </dd>
+                <dt><span jhiTranslate="diafragmaApp.historiaClinica.categoria">Categoria</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'diafragmaApp.Categoria.' + historiaClinica.categoria }}">{{ historiaClinica.categoria }}</span>
+                </dd>
+                <dt><span jhiTranslate="diafragmaApp.historiaClinica.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{ historiaClinica.fecha | formatMediumDatetime }}</span>
+                </dd>
+            </dl>
 
-      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
-        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Atras</span>
       </button>
 
-      <button type="button" [routerLink]="['/historia-clinica', historiaClinica.id, 'edit']" class="btn btn-primary">
+            <button type="button" [routerLink]="['/historia-clinica', historiaClinica.id, 'edit']" class="btn btn-primary">
         <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
       </button>
+        </div>
     </div>
-  </div>
 </div>

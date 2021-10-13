@@ -1,100 +1,94 @@
-<div>
-  <h2 id="page-heading" data-cy="TurnoHeading">
-    <span jhiTranslate="diafragmaApp.turno.home.title">Turnos</span>
+<div style="height: 100vh; display: flex; align-content: center; justify-content: center; padding-top: 10vh">
+    <h2 id="page-heading" data-cy="TurnoHeading">
+        <span jhiTranslate="diafragmaApp.turno.home.title">Turnos</span>
 
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="diafragmaApp.turno.home.refreshListLabel">Refresh List</span>
+        <span>Recargar Lista</span>
       </button>
 
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-turno"
-        [routerLink]="['/turno/new']"
-      >
+            <button id="jh-create-entity" data-cy="entityCreateButton" class="btn btn-primary jh-create-entity create-turno" [routerLink]="['/turno/new']">
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="diafragmaApp.turno.home.createLabel"> Create a new Turno </span>
+        <span>Crear un nuevo turno</span>
       </button>
+        </div>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="turnos?.length === 0">
+        <span jhiTranslate="diafragmaApp.turno.home.notFound">No turnos found</span>
     </div>
-  </h2>
 
-  <jhi-alert-error></jhi-alert-error>
-
-  <jhi-alert></jhi-alert>
-
-  <div class="alert alert-warning" id="no-result" *ngIf="turnos?.length === 0">
-    <span jhiTranslate="diafragmaApp.turno.home.notFound">No turnos found</span>
-  </div>
-
-  <div class="table-responsive" id="entities" *ngIf="turnos && turnos.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="estado">
-            <span jhiTranslate="diafragmaApp.turno.estado">Estado</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="fechaHora">
-            <span jhiTranslate="diafragmaApp.turno.fechaHora">Fecha Hora</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="motivo">
-            <span jhiTranslate="diafragmaApp.turno.motivo">Motivo</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="descripcion">
-            <span jhiTranslate="diafragmaApp.turno.descripcion">Descripcion</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let turno of turnos; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/turno', turno.id, 'view']">{{ turno.id }}</a>
-          </td>
-          <td jhiTranslate="{{ 'diafragmaApp.TurnoEstado.' + turno.estado }}">{{ turno.estado }}</td>
-          <td>{{ turno.fechaHora | formatMediumDatetime }}</td>
-          <td>{{ turno.motivo }}</td>
-          <td>{{ turno.descripcion }}</td>
-          <td class="text-right">
-            <div class="btn-group">
-              <button type="submit" [routerLink]="['/turno', turno.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+    <div class="table-responsive" id="entities" *ngIf="turnos && turnos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col" jhiSortBy="id">
+                        <span jhiTranslate="global.field.id">ID</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="estado">
+                        <span jhiTranslate="diafragmaApp.turno.estado">Estado</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="fechaHora">
+                        <span jhiTranslate="diafragmaApp.turno.fechaHora">Fecha Hora</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="motivo">
+                        <span jhiTranslate="diafragmaApp.turno.motivo">Motivo</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="descripcion">
+                        <span jhiTranslate="diafragmaApp.turno.descripcion">Descripcion</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let turno of turnos; trackBy: trackId" data-cy="entityTable">
+                    <td>
+                        <a [routerLink]="['/turno', turno.id, 'view']">{{ turno.id }}</a>
+                    </td>
+                    <td jhiTranslate="{{ 'diafragmaApp.TurnoEstado.' + turno.estado }}">{{ turno.estado }}</td>
+                    <td>{{ turno.fechaHora | formatMediumDatetime }}</td>
+                    <td>{{ turno.motivo }}</td>
+                    <td>{{ turno.descripcion }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit" [routerLink]="['/turno', turno.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
                 <fa-icon icon="eye"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
               </button>
 
-              <button type="submit" [routerLink]="['/turno', turno.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                            <button type="submit" [routerLink]="['/turno', turno.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
                 <fa-icon icon="pencil-alt"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
               </button>
 
-              <button type="submit" (click)="delete(turno)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                            <button type="submit" (click)="delete(turno)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                 <fa-icon icon="times"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
               </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div *ngIf="turnos && turnos.length > 0">
-    <div class="row justify-content-center">
-      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="row justify-content-center">
-      <ngb-pagination
-        [collectionSize]="totalItems"
-        [(page)]="ngbPaginationPage"
-        [pageSize]="itemsPerPage"
-        [maxSize]="5"
-        [rotate]="true"
-        [boundaryLinks]="true"
-        (pageChange)="loadPage($event)"
-      ></ngb-pagination>
+    <div *ngIf="turnos && turnos.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
-  </div>
 </div>

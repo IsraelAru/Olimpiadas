@@ -1,110 +1,93 @@
-<div>
-  <h2 id="page-heading" data-cy="HistoriaClinicaHeading">
-    <span jhiTranslate="diafragmaApp.historiaClinica.home.title">Historia Clinicas</span>
+<div style="height: 100vh; display: flex; align-content: center; justify-content: center; padding-top: 10vh">
+    <h2 id="page-heading" data-cy="HistoriaClinicaHeading">
+        <span>Historias Clinicas</span>
 
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="diafragmaApp.historiaClinica.home.refreshListLabel">Refresh List</span>
+        <span>Recargar Lista</span>
       </button>
 
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-historia-clinica"
-        [routerLink]="['/historia-clinica/new']"
-      >
+            <button id="jh-create-entity" data-cy="entityCreateButton" class="btn btn-primary jh-create-entity create-historia-clinica" [routerLink]="['/historia-clinica/new']">
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="diafragmaApp.historiaClinica.home.createLabel"> Create a new Historia Clinica </span>
+        <span> Crear una nueva historia clínica</span>
       </button>
+        </div>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="historiaClinicas?.length === 0">
+        <span>No se encontraron historias clínicas</span>
     </div>
-  </h2>
 
-  <jhi-alert-error></jhi-alert-error>
-
-  <jhi-alert></jhi-alert>
-
-  <div class="alert alert-warning" id="no-result" *ngIf="historiaClinicas?.length === 0">
-    <span jhiTranslate="diafragmaApp.historiaClinica.home.notFound">No historiaClinicas found</span>
-  </div>
-
-  <div class="table-responsive" id="entities" *ngIf="historiaClinicas && historiaClinicas.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="diagnostico">
-            <span jhiTranslate="diafragmaApp.historiaClinica.diagnostico">Diagnostico</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="tratamiento">
-            <span jhiTranslate="diafragmaApp.historiaClinica.tratamiento">Tratamiento</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="categoria">
-            <span jhiTranslate="diafragmaApp.historiaClinica.categoria">Categoria</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col" jhiSortBy="fecha">
-            <span jhiTranslate="diafragmaApp.historiaClinica.fecha">Fecha</span> <fa-icon icon="sort"></fa-icon>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let historiaClinica of historiaClinicas; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/historia-clinica', historiaClinica.id, 'view']">{{ historiaClinica.id }}</a>
-          </td>
-          <td>{{ historiaClinica.diagnostico }}</td>
-          <td>{{ historiaClinica.tratamiento }}</td>
-          <td jhiTranslate="{{ 'diafragmaApp.Categoria.' + historiaClinica.categoria }}">{{ historiaClinica.categoria }}</td>
-          <td>{{ historiaClinica.fecha | formatMediumDatetime }}</td>
-          <td class="text-right">
-            <div class="btn-group">
-              <button
-                type="submit"
-                [routerLink]="['/historia-clinica', historiaClinica.id, 'view']"
-                class="btn btn-info btn-sm"
-                data-cy="entityDetailsButton"
-              >
+    <div class="table-responsive" id="entities" *ngIf="historiaClinicas && historiaClinicas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="diagnostico">
+                        <span jhiTranslate="diafragmaApp.historiaClinica.diagnostico">Diagnostico</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="tratamiento">
+                        <span jhiTranslate="diafragmaApp.historiaClinica.tratamiento">Tratamiento</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="categoria">
+                        <span jhiTranslate="diafragmaApp.historiaClinica.categoria">Categoria</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col" jhiSortBy="fecha">
+                        <span jhiTranslate="diafragmaApp.historiaClinica.fecha">Fecha</span>
+                        <fa-icon icon="sort"></fa-icon>
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let historiaClinica of historiaClinicas; trackBy: trackId" data-cy="entityTable">
+                    <td>
+                        <a [routerLink]="['/historia-clinica', historiaClinica.id, 'view']">{{ historiaClinica.id }}</a>
+                    </td>
+                    <td>{{ historiaClinica.diagnostico }}</td>
+                    <td>{{ historiaClinica.tratamiento }}</td>
+                    <td jhiTranslate="{{ 'diafragmaApp.Categoria.' + historiaClinica.categoria }}">{{ historiaClinica.categoria }}</td>
+                    <td>{{ historiaClinica.fecha | formatMediumDatetime }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit" [routerLink]="['/historia-clinica', historiaClinica.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
                 <fa-icon icon="eye"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
               </button>
 
-              <button
-                type="submit"
-                [routerLink]="['/historia-clinica', historiaClinica.id, 'edit']"
-                class="btn btn-primary btn-sm"
-                data-cy="entityEditButton"
-              >
+                            <button type="submit" [routerLink]="['/historia-clinica', historiaClinica.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
                 <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                <span class="d-none d-md-inline">Editar</span>
               </button>
 
-              <button type="submit" (click)="delete(historiaClinica)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                            <button type="submit" (click)="delete(historiaClinica)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                 <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                <span class="d-none d-md-inline">Borrar</span>
               </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div *ngIf="historiaClinicas && historiaClinicas.length > 0">
-    <div class="row justify-content-center">
-      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="row justify-content-center">
-      <ngb-pagination
-        [collectionSize]="totalItems"
-        [(page)]="ngbPaginationPage"
-        [pageSize]="itemsPerPage"
-        [maxSize]="5"
-        [rotate]="true"
-        [boundaryLinks]="true"
-        (pageChange)="loadPage($event)"
-      ></ngb-pagination>
+    <div *ngIf="historiaClinicas && historiaClinicas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
-  </div>
 </div>

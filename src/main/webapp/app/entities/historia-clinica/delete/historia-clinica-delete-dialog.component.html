@@ -1,29 +1,25 @@
-<form *ngIf="historiaClinica" name="deleteForm" (ngSubmit)="confirmDelete(historiaClinica.id!)">
-  <div class="modal-header">
-    <h4 class="modal-title" data-cy="historiaClinicaDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
+<form *ngIf="historiaClinica" name="deleteForm" (ngSubmit)="confirmDelete(historiaClinica.id!)" style="height: 100vh; display: flex; align-content: center; justify-content: center; padding-top: 10vh">
+    <div class="modal-header">
+        <h4 class="modal-title" data-cy="historiaClinicaDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
 
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="cancel()">&times;</button>
-  </div>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="cancel()">&times;</button>
+    </div>
 
-  <div class="modal-body">
-    <jhi-alert-error></jhi-alert-error>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
 
-    <p
-      id="jhi-delete-historiaClinica-heading"
-      jhiTranslate="diafragmaApp.historiaClinica.delete.question"
-      [translateValues]="{ id: historiaClinica.id }"
-    >
-      Are you sure you want to delete this Historia Clinica?
-    </p>
-  </div>
+        <p id="jhi-delete-historiaClinica-heading" jhiTranslate="diafragmaApp.historiaClinica.delete.question" [translateValues]="{ id: historiaClinica.id }">
+            Are you sure you want to delete this Historia Clinica?
+        </p>
+    </div>
 
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
       <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
     </button>
 
-    <button id="jhi-confirm-delete-historiaClinica" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+        <button id="jhi-confirm-delete-historiaClinica" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
       <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
     </button>
-  </div>
+    </div>
 </form>
